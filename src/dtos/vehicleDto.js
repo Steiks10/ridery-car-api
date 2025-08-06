@@ -1,4 +1,13 @@
+
+/**
+ * Data Transfer Object para la entidad Vehicle
+ * Filtra y valida los datos recibidos
+ */
 class VehicleDto {
+  /**
+   * Constructor del DTO de vehículo
+   * @param {Object} params - Parámetros del vehículo
+   */
   constructor({ state_id, model_id, model_year, color, license_plate, driver_id, stock_location_id }) {
     if (!state_id || !model_id || !model_year || !color || !license_plate || !driver_id) {
       throw new Error('Missing required fields');

@@ -1,5 +1,9 @@
+
+// Importa Express y crea el router para las rutas de vehículos
 const express = require('express');
 const router = express.Router();
+
+// Importa el controlador de vehículos
 const vehicleController = require('../controllers/vehicleController');
 
 
@@ -40,13 +44,17 @@ const vehicleController = require('../controllers/vehicleController');
  *       201:
  *         description: Vehículo creado
  */
+/**
+ * Ruta para crear un vehículo
+ * Recibe los datos por el body y los pasa al controlador
+ * Devuelve el vehículo creado como respuesta
+ */
 router.post('/', async (req, res) => {
-  console.log('POST /vehicles');
-  console.log('DATA:', req.body);
-  const vehicle = await vehicleController.createVehicle(req.body);
-  console.log('Vehicle created:', vehicle);
-  console.log('AFTERRR')
-  res.status(201).json(vehicle);
+  console.log('POST /vehicles'); // Log para depuración
+  console.log('DATA:', req.body); // Muestra los datos recibidos
+  const vehicle = await vehicleController.createVehicle(req.body); // Llama al controlador
+  console.log('Vehicle created:', vehicle); // Muestra el resultado
+  res.status(201).json(vehicle); // Devuelve el vehículo creado
 });
 
 
@@ -67,4 +75,6 @@ router.post('/by_driver', (req, res) => {
 });
 
 
+
+// Exporta el router para ser usado en el archivo principal
 module.exports = router;
