@@ -25,7 +25,7 @@ Esta separación permite que cada capa tenga una responsabilidad clara y facilit
 ## Instalación
 1. Clona el repositorio:
    ```bash
-   git clone <url-del-repo>
+   git clone https://github.com/Steiks10/ridery-car-api.git
    cd ridery-car-api
    ```
 2. Instala las dependencias:
